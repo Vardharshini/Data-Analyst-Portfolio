@@ -1,3 +1,4 @@
+<img width="1625" height="968" alt="swiggy" src="https://github.com/user-attachments/assets/a17b795f-7dc8-43b5-ae0d-8a465101f33c" />
 # 🛒 Swiggy Instamart Sales & Operations Analytics Dashboard
 
 ## 📌 Project Overview
