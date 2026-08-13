@@ -3,17 +3,399 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Vardharshini | Data Analyst Portfolio</title>
+
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-    <h1>Hi, I'm Vardharshini 👋</h1>
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
 
-    <h2>Aspiring Data Analyst</h2>
+        <div class="profile">
+            <h2>Vardharshini</h2>
+            <p>Data Analyst</p>
+        </div>
 
-    <p>
-        Welcome to my portfolio website.
-    </p>
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#skills">Skills</a>
+            <a href="#projects">Projects</a>
+            <a href="#experience">Experience</a>
+            <a href="#education">Education</a>
+            <a href="#contact">Contact</a>
+        </nav>
+
+        <div class="sidebar-links">
+            <a href="https://www.linkedin.com/" target="_blank">LinkedIn</a>
+            <a href="https://github.com/Vardharshini" target="_blank">GitHub</a>
+        </div>
+
+    </aside>
+
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content">
+
+        <!-- HOME -->
+        <section id="home" class="hero">
+
+            <div class="availability">
+                ● AVAILABLE FOR OPPORTUNITIES
+            </div>
+
+            <h1>Hi, I'm <span>Vardharshini.</span></h1>
+
+            <h2>I turn data into<br>
+                <strong>actionable business insights.</strong>
+            </h2>
+
+            <p class="hero-text">
+                Aspiring Data Analyst skilled in SQL, Power BI, Python,
+                Excel, DAX and Data Visualization.
+            </p>
+
+            <div class="buttons">
+                <a href="#projects" class="btn primary">View Projects</a>
+
+                <a href="https://www.linkedin.com/" 
+                   target="_blank" 
+                   class="btn">
+                    LinkedIn
+                </a>
+
+                <a href="https://github.com/Vardharshini" 
+                   target="_blank" 
+                   class="btn">
+                    GitHub
+                </a>
+            </div>
+
+        </section>
+
+
+        <!-- ABOUT -->
+        <section id="about" class="section">
+
+            <h2>About Me</h2>
+
+            <p>
+                I am an aspiring Data Analyst with hands-on experience in
+                Data Analysis, Business Intelligence, SQL, Microsoft Power BI,
+                DAX, Power Query, Microsoft Excel and Python.
+            </p>
+
+            <p>
+                I enjoy transforming raw data into meaningful business
+                insights through data cleaning, data transformation,
+                exploratory data analysis, KPI reporting, data visualization,
+                dashboard development and business reporting.
+            </p>
+
+            <p>
+                My goal is to use data-driven analysis to identify trends,
+                patterns, performance gaps and opportunities that support
+                better business decisions.
+            </p>
+
+        </section>
+
+
+        <!-- SKILLS -->
+        <section id="skills" class="section">
+
+            <h2>Skills & Technologies</h2>
+
+            <div class="skills-grid">
+
+                <div class="skill-card">
+                    <h3>SQL</h3>
+                    <p>
+                        SQL Queries, Joins, Subqueries, CTEs,
+                        Window Functions, Aggregations
+                    </p>
+                </div>
+
+                <div class="skill-card">
+                    <h3>Power BI</h3>
+                    <p>
+                        Data Modeling, DAX, Power Query,
+                        Interactive Dashboards, KPI Reporting
+                    </p>
+                </div>
+
+                <div class="skill-card">
+                    <h3>Python</h3>
+                    <p>
+                        Python, Pandas, NumPy,
+                        Data Cleaning, Exploratory Data Analysis
+                    </p>
+                </div>
+
+                <div class="skill-card">
+                    <h3>Excel</h3>
+                    <p>
+                        Pivot Tables, Lookup Functions,
+                        Data Cleaning, Reporting and Analysis
+                    </p>
+                </div>
+
+                <div class="skill-card">
+                    <h3>Data Analytics</h3>
+                    <p>
+                        Data Cleaning, Data Transformation,
+                        Statistical Analysis, Business Insights
+                    </p>
+                </div>
+
+                <div class="skill-card">
+                    <h3>Data Visualization</h3>
+                    <p>
+                        Dashboard Development, KPI Dashboards,
+                        Charts, Reports and Data Storytelling
+                    </p>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- PROJECTS -->
+        <section id="projects" class="section">
+
+            <h2>Featured Projects</h2>
+
+            <div class="projects-grid">
+
+                <!-- ZOMATO -->
+                <div class="project-card">
+
+                    <span class="project-number">01</span>
+
+                    <h3>Zomato Sales & Delivery Analytics Dashboard</h3>
+
+                    <p>
+                        Interactive Business Intelligence dashboard
+                        analyzing sales performance, delivery operations,
+                        customer behavior and business KPIs.
+                    </p>
+
+                    <div class="tags">
+                        <span>Power BI</span>
+                        <span>DAX</span>
+                        <span>Data Analysis</span>
+                        <span>Dashboard</span>
+                    </div>
+
+                    <a href="projects/zomato/" class="project-link">
+                        View Project →
+                    </a>
+
+                </div>
+
+
+                <!-- SWIGGY -->
+                <div class="project-card">
+
+                    <span class="project-number">02</span>
+
+                    <h3>Swiggy Instamart Sales & Operations Analytics</h3>
+
+                    <p>
+                        Sales and operations analytics dashboard focused
+                        on order performance, customer trends, product
+                        performance and operational KPIs.
+                    </p>
+
+                    <div class="tags">
+                        <span>Power BI</span>
+                        <span>SQL</span>
+                        <span>Data Visualization</span>
+                        <span>Analytics</span>
+                    </div>
+
+                    <a href="projects/swiggy/" class="project-link">
+                        View Project →
+                    </a>
+
+                </div>
+
+
+                <!-- ZUDIO -->
+                <div class="project-card">
+
+                    <span class="project-number">03</span>
+
+                    <h3>Zudio Retail Sales & Customer Analytics</h3>
+
+                    <p>
+                        Retail analytics project analyzing sales,
+                        customers, product performance, revenue trends
+                        and business performance.
+                    </p>
+
+                    <div class="tags">
+                        <span>Power BI</span>
+                        <span>Excel</span>
+                        <span>Data Analysis</span>
+                        <span>Business Intelligence</span>
+                    </div>
+
+                    <a href="projects/zudio/" class="project-link">
+                        View Project →
+                    </a>
+
+                </div>
+
+
+                <!-- AI -->
+                <div class="project-card">
+
+                    <span class="project-number">04</span>
+
+                    <h3>AI Conversation & Product Analytics Dashboard</h3>
+
+                    <p>
+                        Power BI analytics dashboard designed to analyze
+                        AI conversation data, product performance,
+                        user behavior and key business metrics.
+                    </p>
+
+                    <div class="tags">
+                        <span>Power BI</span>
+                        <span>Data Modeling</span>
+                        <span>DAX</span>
+                        <span>Analytics</span>
+                    </div>
+
+                    <a href="#" class="project-link">
+                        View Project →
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- EXPERIENCE -->
+        <section id="experience" class="section">
+
+            <h2>Experience</h2>
+
+            <div class="experience-card">
+
+                <h3>Data Analyst Intern</h3>
+
+                <h4>GWC Data AI</h4>
+
+                <p class="date">
+                    February 2026 – June 2026
+                </p>
+
+                <ul>
+                    <li>
+                        Worked on data analysis and business intelligence
+                        projects using Power BI and SQL.
+                    </li>
+
+                    <li>
+                        Developed interactive dashboards and KPI reports
+                        for business reporting.
+                    </li>
+
+                    <li>
+                        Performed data cleaning, transformation and
+                        data modeling.
+                    </li>
+
+                    <li>
+                        Worked with Power Query, DAX and data visualization
+                        techniques.
+                    </li>
+
+                    <li>
+                        Explored Domo, Magic ETL, workflows and
+                        data governance concepts.
+                    </li>
+                </ul>
+
+            </div>
+
+        </section>
+
+
+        <!-- EDUCATION -->
+        <section id="education" class="section">
+
+            <h2>Education</h2>
+
+            <div class="education-card">
+
+                <h3>Muthayammal College of Arts and Science</h3>
+
+                <p>
+                    Bachelor's Degree
+                </p>
+
+                <p>
+                    Percentage: 68%
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- CONTACT -->
+        <section id="contact" class="section contact">
+
+            <h2>Let's Connect</h2>
+
+            <p>
+                I am currently looking for entry-level opportunities
+                in Data Analytics, Business Intelligence and Reporting.
+            </p>
+
+            <div class="contact-buttons">
+
+                <a href="https://www.linkedin.com/" 
+                   target="_blank"
+                   class="btn primary">
+                    LinkedIn
+                </a>
+
+                <a href="https://github.com/Vardharshini" 
+                   target="_blank"
+                   class="btn">
+                    GitHub
+                </a>
+
+                <a href="mailto:your-email@gmail.com"
+                   class="btn">
+                    Email Me
+                </a>
+
+            </div>
+
+        </section>
+
+
+        <!-- FOOTER -->
+        <footer>
+
+            <p>
+                © 2026 Vardharshini | Data Analyst Portfolio
+            </p>
+
+        </footer>
+
+    </main>
 
 </body>
 </html>
