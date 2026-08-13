@@ -1,3 +1,4 @@
+<img width="1693" height="929" alt="Zomato" src="https://github.com/user-attachments/assets/0378d76f-b67f-4d63-9f06-c949db50b4de" />
 # 📊 Zomato Sales & Delivery Analytics Dashboard
 
 ## 📌 Project Overview
