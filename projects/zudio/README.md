@@ -1,3 +1,4 @@
+<img width="1670" height="941" alt="Zudio" src="https://github.com/user-attachments/assets/42e4862a-b8de-46e4-8509-e68629fb0d0d" />
 # 👗 Zudio Retail Sales & Customer Analytics Dashboard
 
 ## 📌 Project Overview
