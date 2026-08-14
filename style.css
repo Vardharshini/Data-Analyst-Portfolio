@@ -1114,3 +1114,125 @@ button,
     }
 
 }
+/* ========================================
+   SCROLL REVEAL
+======================================== */
+
+.reveal-element {
+    opacity: 0;
+    transform: translateY(35px);
+    transition:
+        opacity 0.8s ease,
+        transform 0.8s ease;
+}
+
+.reveal-active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* ========================================
+   STAGGERED ANIMATION
+======================================== */
+
+.about-card:nth-child(1),
+.project-card:nth-child(1) {
+    transition-delay: 0.1s;
+}
+
+.about-card:nth-child(2),
+.project-card:nth-child(2) {
+    transition-delay: 0.2s;
+}
+
+.about-card:nth-child(3),
+.project-card:nth-child(3) {
+    transition-delay: 0.3s;
+}
+
+
+/* ========================================
+   BUTTON CLICK
+======================================== */
+
+.button-clicked {
+    transform: scale(0.94) !important;
+}
+
+
+/* ========================================
+   DARK MODE
+======================================== */
+
+body.dark-mode {
+    background: #211c24;
+    color: #f8edf2;
+}
+
+body.dark-mode .about-section,
+body.dark-mode .projects-section,
+body.dark-mode .contact-section {
+    background: #211c24;
+}
+
+body.dark-mode .skills-section,
+body.dark-mode .experience-section {
+    background: #2c2430;
+}
+
+body.dark-mode .about-card,
+body.dark-mode .project-card,
+body.dark-mode .skill-pill,
+body.dark-mode .experience-content {
+    background: #302832;
+    border-color: #594b59;
+    color: #f8edf2;
+}
+
+body.dark-mode h1,
+body.dark-mode h2,
+body.dark-mode h3,
+body.dark-mode p {
+    color: inherit;
+}
+
+body.dark-mode .hero {
+    background:
+        radial-gradient(
+            circle at 85% 20%,
+            #4b304b 0%,
+            transparent 28%
+        ),
+        #211c24;
+}
+
+body.dark-mode .contact-section {
+    background: #38293a;
+}
+
+body.dark-mode .contact-form input,
+body.dark-mode .contact-form textarea {
+    background: #302832;
+    color: white;
+    border-color: #594b59;
+}
+
+body.dark-mode .contact-form input::placeholder,
+body.dark-mode .contact-form textarea::placeholder {
+    color: #c8b9c8;
+}
+
+
+/* ========================================
+   DISABLE TILT ON SMALL SCREENS
+======================================== */
+
+@media (max-width: 700px) {
+
+    .profile-box,
+    .project-card {
+        transform: none !important;
+    }
+
+}
