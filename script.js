@@ -1,265 +1,317 @@
-/* ========================================
-   PORTFOLIO INTERACTIONS
-======================================== */
+/* =========================================
+   THEME TOGGLE
+========================================= */
 
-document.addEventListener("DOMContentLoaded", () => {
+const themeButton = document.getElementById("themeButton");
+const themeIcon = themeButton.querySelector("i");
 
-    /* ========================================
-       THEME TOGGLE
-    ======================================== */
+themeButton.addEventListener("click", () => {
 
-    const themeButton = document.getElementById("themeButton");
+    document.body.classList.toggle("dark-mode");
 
-    if (themeButton) {
+    if (document.body.classList.contains("dark-mode")) {
 
-        themeButton.addEventListener("click", () => {
+        themeIcon.classList.remove("fa-sun");
+        themeIcon.classList.add("fa-moon");
 
-            document.body.classList.toggle("dark-mode");
+    } else {
 
-            const icon = themeButton.querySelector("i");
-
-            if (document.body.classList.contains("dark-mode")) {
-
-                icon.classList.remove("fa-sun");
-                icon.classList.add("fa-moon");
-
-            } else {
-
-                icon.classList.remove("fa-moon");
-                icon.classList.add("fa-sun");
-
-            }
-
-        });
+        themeIcon.classList.remove("fa-moon");
+        themeIcon.classList.add("fa-sun");
 
     }
 
+});
 
-    /* ========================================
-       SCROLL REVEAL
-    ======================================== */
 
-    const revealElements = document.querySelectorAll(
-        ".about-card, .skill-pill, .project-card, .experience-item, .contact-info, .contact-form"
+/* =========================================
+   SMOOTH SCROLL
+========================================= */
+
+document.querySelectorAll('a[href^="#"]').forEach(link => {
+
+    link.addEventListener("click", function (event) {
+
+        const targetId = this.getAttribute("href");
+
+        if (targetId === "#") {
+            return;
+        }
+
+        const target = document.querySelector(targetId);
+
+        if (target) {
+
+            event.preventDefault();
+
+            target.scrollIntoView({
+                behavior: "smooth",
+                block: "start"
+            });
+
+        }
+
+    });
+
+});
+
+
+/* =========================================
+   PROJECT / ABOUT / CERTIFICATE
+   3D MOUSE MOVEMENT
+========================================= */
+
+const interactiveCards =
+    document.querySelectorAll(".interactive-card");
+
+
+interactiveCards.forEach(card => {
+
+    card.addEventListener("mousemove", event => {
+
+        const rect = card.getBoundingClientRect();
+
+        const x = event.clientX - rect.left;
+        const y = event.clientY - rect.top;
+
+        const centerX = rect.width / 2;
+        const centerY = rect.height / 2;
+
+        const rotateX =
+            ((y - centerY) / centerY) * -3;
+
+        const rotateY =
+            ((x - centerX) / centerX) * 3;
+
+        card.style.transform =
+            `perspective(900px)
+             rotateX(${rotateX}deg)
+             rotateY(${rotateY}deg)
+             translateY(-8px)
+             scale(1.015)`;
+
+    });
+
+
+    card.addEventListener("mouseleave", () => {
+
+        card.style.transform = "";
+
+    });
+
+});
+
+
+/* =========================================
+   SKILLS MOUSE MOVEMENT
+========================================= */
+
+const skillPills =
+    document.querySelectorAll(".interactive-pill");
+
+
+skillPills.forEach(pill => {
+
+    pill.addEventListener("mousemove", event => {
+
+        const rect = pill.getBoundingClientRect();
+
+        const x = event.clientX - rect.left;
+
+        const center = rect.width / 2;
+
+        const movement =
+            ((x - center) / center) * 4;
+
+        pill.style.transform =
+            `translateY(-7px)
+             translateX(${movement}px)
+             scale(1.06)`;
+
+    });
+
+
+    pill.addEventListener("mouseleave", () => {
+
+        pill.style.transform = "";
+
+    });
+
+});
+
+
+/* =========================================
+   HERO IMAGE MOVEMENT
+========================================= */
+
+const heroPhoto =
+    document.querySelector(".hero-photo-card");
+
+
+if (heroPhoto) {
+
+    heroPhoto.addEventListener("mousemove", event => {
+
+        const rect =
+            heroPhoto.getBoundingClientRect();
+
+        const x =
+            event.clientX - rect.left;
+
+        const y =
+            event.clientY - rect.top;
+
+        const centerX =
+            rect.width / 2;
+
+        const centerY =
+            rect.height / 2;
+
+        const rotateX =
+            ((y - centerY) / centerY) * -4;
+
+        const rotateY =
+            ((x - centerX) / centerX) * 4;
+
+        heroPhoto.style.transform =
+            `perspective(1000px)
+             rotateX(${rotateX}deg)
+             rotateY(${rotateY}deg)
+             scale(1.025)`;
+
+    });
+
+
+    heroPhoto.addEventListener("mouseleave", () => {
+
+        heroPhoto.style.transform = "";
+
+    });
+
+}
+
+
+/* =========================================
+   SCROLL REVEAL
+========================================= */
+
+const revealElements =
+    document.querySelectorAll(
+        ".about-card, .skill-pill, .project-card, .experience-item, .certificate-card, .contact-container"
     );
 
 
-    const revealObserver = new IntersectionObserver(
+const revealObserver =
+    new IntersectionObserver(
+        entries => {
 
-        (entries) => {
-
-            entries.forEach((entry) => {
+            entries.forEach(entry => {
 
                 if (entry.isIntersecting) {
 
-                    entry.target.classList.add("reveal-active");
+                    entry.target.style.opacity = "1";
 
-                    revealObserver.unobserve(entry.target);
+                    entry.target.style.transform =
+                        "translateY(0)";
+
+                    revealObserver.unobserve(
+                        entry.target
+                    );
 
                 }
 
             });
 
         },
-
         {
             threshold: 0.15
         }
-
     );
 
 
-    revealElements.forEach((element) => {
+revealElements.forEach(element => {
 
-        element.classList.add("reveal-element");
+    element.style.opacity = "0";
 
-        revealObserver.observe(element);
+    element.style.transform =
+        "translateY(35px)";
 
-    });
+    element.style.transition =
+        "opacity 0.7s ease, transform 0.7s ease";
 
+    revealObserver.observe(element);
 
-    /* ========================================
-       SMOOTH NAVIGATION
-    ======================================== */
-
-    const navigationLinks = document.querySelectorAll(
-        'a[href^="#"]'
-    );
+});
 
 
-    navigationLinks.forEach((link) => {
+/* =========================================
+   CONTACT FORM
+========================================= */
 
-        link.addEventListener("click", (event) => {
-
-            const targetId = link.getAttribute("href");
-
-            if (targetId === "#") {
-                return;
-            }
-
-            const target = document.querySelector(targetId);
-
-            if (target) {
-
-                event.preventDefault();
-
-                target.scrollIntoView({
-                    behavior: "smooth",
-                    block: "start"
-                });
-
-            }
-
-        });
-
-    });
+const contactForm =
+    document.getElementById("contactForm");
 
 
-    /* ========================================
-       MOUSE MOVEMENT EFFECT
-    ======================================== */
+if (contactForm) {
 
-    const profileBox = document.querySelector(".profile-box");
-
-
-    if (profileBox) {
-
-        profileBox.addEventListener("mousemove", (event) => {
-
-            const rect = profileBox.getBoundingClientRect();
-
-            const x = event.clientX - rect.left;
-            const y = event.clientY - rect.top;
-
-            const centerX = rect.width / 2;
-            const centerY = rect.height / 2;
-
-            const rotateX =
-                ((y - centerY) / centerY) * -5;
-
-            const rotateY =
-                ((x - centerX) / centerX) * 5;
-
-
-            profileBox.style.transform =
-                `perspective(800px)
-                 rotateX(${rotateX}deg)
-                 rotateY(${rotateY}deg)
-                 scale(1.03)`;
-
-        });
-
-
-        profileBox.addEventListener("mouseleave", () => {
-
-            profileBox.style.transform =
-                "perspective(800px) rotateX(0) rotateY(0) scale(1)";
-
-        });
-
-    }
-
-
-    /* ========================================
-       PROJECT CARD TILT
-    ======================================== */
-
-    const projectCards =
-        document.querySelectorAll(".project-card");
-
-
-    projectCards.forEach((card) => {
-
-        card.addEventListener("mousemove", (event) => {
-
-            const rect = card.getBoundingClientRect();
-
-            const x = event.clientX - rect.left;
-            const y = event.clientY - rect.top;
-
-            const centerX = rect.width / 2;
-            const centerY = rect.height / 2;
-
-            const rotateX =
-                ((y - centerY) / centerY) * -3;
-
-            const rotateY =
-                ((x - centerX) / centerX) * 3;
-
-
-            card.style.transform =
-                `perspective(700px)
-                 rotateX(${rotateX}deg)
-                 rotateY(${rotateY}deg)
-                 translateY(-10px)`;
-
-        });
-
-
-        card.addEventListener("mouseleave", () => {
-
-            card.style.transform =
-                "perspective(700px) rotateX(0) rotateY(0) translateY(0)";
-
-        });
-
-    });
-
-
-    /* ========================================
-       CONTACT FORM
-    ======================================== */
-
-    const contactForm =
-        document.querySelector(".contact-form");
-
-
-    if (contactForm) {
-
-        contactForm.addEventListener("submit", (event) => {
+    contactForm.addEventListener(
+        "submit",
+        event => {
 
             event.preventDefault();
 
             const name =
                 contactForm.querySelector(
-                    'input[type="text"]'
-                ).value;
+                    'input[name="name"]'
+                ).value.trim();
 
 
-            alert(
-                `Thank you, ${name}! 🌸 Your message has been received.`
-            );
+            if (name) {
+
+                alert(
+                    `Thank you, ${name}! 🌸 Your message has been received.`
+                );
+
+            } else {
+
+                alert(
+                    "Thank you for reaching out! 🌸"
+                );
+
+            }
 
 
             contactForm.reset();
 
-        });
+        }
+    );
 
-    }
-
-
-    /* ========================================
-       BUTTON CLICK ANIMATION
-    ======================================== */
-
-    const buttons =
-        document.querySelectorAll("button, .hero-button, .project-button");
+}
 
 
-    buttons.forEach((button) => {
+/* =========================================
+   BUTTON CLICK ANIMATION
+========================================= */
 
-        button.addEventListener("click", () => {
+const buttons =
+    document.querySelectorAll(
+        ".hero-button, .project-button, .certificate-button, .contact-form button"
+    );
 
-            button.classList.add("button-clicked");
+
+buttons.forEach(button => {
+
+    button.addEventListener("mousedown", () => {
+
+        button.style.transform =
+            "scale(0.95)";
+
+    });
 
 
-            setTimeout(() => {
+    button.addEventListener("mouseup", () => {
 
-                button.classList.remove("button-clicked");
-
-            }, 180);
-
-        });
+        button.style.transform = "";
 
     });
 
