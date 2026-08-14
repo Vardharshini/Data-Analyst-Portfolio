@@ -1,5 +1,5 @@
 <img width="1672" height="941" alt="chatgpt" src="https://github.com/user-attachments/assets/1a93afa6-6590-4dec-87e8-081d889dacc5" />
-# 🤖 AI Conversation & Product Analytics Dashboard – Power BI
+# 🤖Chatgpt Conversation & Product Analytics Dashboard – Power BI
 
 ## 📌 Project Overview
 
