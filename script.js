@@ -1,242 +1,110 @@
+// ================================
+// PORTFOLIO JAVASCRIPT
+// ================================
+
+
+// Page loaded animation
 document.addEventListener("DOMContentLoaded", () => {
 
-    /* =========================================
-       SCROLL REVEAL
-    ========================================= */
+    // Reveal sections while scrolling
+    const sections = document.querySelectorAll(".section, .contact-section");
 
-    const revealElements = document.querySelectorAll(
-        ".section, .skill-card, .project-card, .experience-card, .education-card"
-    );
-
-    revealElements.forEach((element) => {
-        element.classList.add("reveal");
-    });
-
-    const revealObserver = new IntersectionObserver(
-        (entries, observer) => {
-            entries.forEach((entry) => {
-
-                if (entry.isIntersecting) {
-                    entry.target.classList.add("active");
-
-                    observer.unobserve(entry.target);
-                }
-
-            });
-        },
-        {
-            threshold: 0.12
-        }
-    );
-
-    revealElements.forEach((element) => {
-        revealObserver.observe(element);
-    });
-
-
-    /* =========================================
-       ACTIVE NAVIGATION
-    ========================================= */
-
-    const sections = document.querySelectorAll("section[id]");
-    const navLinks = document.querySelectorAll(".sidebar nav a");
-
-    const navObserver = new IntersectionObserver(
+    const observer = new IntersectionObserver(
         (entries) => {
-
             entries.forEach((entry) => {
 
                 if (entry.isIntersecting) {
-
-                    navLinks.forEach((link) => {
-                        link.classList.remove("active-nav");
-                    });
-
-                    const activeLink = document.querySelector(
-                        `.sidebar nav a[href="#${entry.target.id}"]`
-                    );
-
-                    if (activeLink) {
-                        activeLink.classList.add("active-nav");
-                    }
+                    entry.target.classList.add("show");
                 }
 
             });
-
         },
         {
-            threshold: 0.45
+            threshold: 0.15
         }
     );
 
     sections.forEach((section) => {
-        navObserver.observe(section);
+        observer.observe(section);
     });
 
+});
 
-    /* =========================================
-       PROJECT CARD TILT EFFECT
-    ========================================= */
 
-    const cards = document.querySelectorAll(".project-card");
+// ================================
+// ACTIVE NAVIGATION
+// ================================
 
-    cards.forEach((card) => {
+const navLinks = document.querySelectorAll(".navbar nav a");
 
-        card.addEventListener("mousemove", (event) => {
+window.addEventListener("scroll", () => {
 
-            const rect = card.getBoundingClientRect();
+    let currentSection = "";
 
-            const x =
-                event.clientX - rect.left;
+    const sections = document.querySelectorAll("section");
 
-            const y =
-                event.clientY - rect.top;
+    sections.forEach((section) => {
 
-            const centerX =
-                rect.width / 2;
+        const sectionTop = section.offsetTop - 150;
+        const sectionHeight = section.offsetHeight;
 
-            const centerY =
-                rect.height / 2;
-
-            const rotateX =
-                ((y - centerY) / centerY) * -2;
-
-            const rotateY =
-                ((x - centerX) / centerX) * 2;
-
-            card.style.transform =
-                `perspective(900px)
-                 rotateX(${rotateX}deg)
-                 rotateY(${rotateY}deg)
-                 translateY(-8px)`;
-        });
-
-        card.addEventListener("mouseleave", () => {
-
-            card.style.transform =
-                "perspective(900px) rotateX(0) rotateY(0) translateY(0)";
-        });
+        if (
+            window.scrollY >= sectionTop &&
+            window.scrollY < sectionTop + sectionHeight
+        ) {
+            currentSection = section.getAttribute("id");
+        }
 
     });
-
-
-    /* =========================================
-       SMOOTH NAVIGATION
-    ========================================= */
 
     navLinks.forEach((link) => {
 
-        link.addEventListener("click", (event) => {
+        link.classList.remove("active");
 
-            const targetId =
-                link.getAttribute("href");
-
-            if (
-                targetId &&
-                targetId.startsWith("#")
-            ) {
-
-                const target =
-                    document.querySelector(targetId);
-
-                if (target) {
-
-                    event.preventDefault();
-
-                    target.scrollIntoView({
-                        behavior: "smooth",
-                        block: "start"
-                    });
-                }
-            }
-        });
-
-    });
-
-
-    /* =========================================
-       BUTTON RIPPLE EFFECT
-    ========================================= */
-
-    const buttons =
-        document.querySelectorAll(".btn");
-
-    buttons.forEach((button) => {
-
-        button.addEventListener("click", (event) => {
-
-            const ripple =
-                document.createElement("span");
-
-            ripple.classList.add("ripple");
-
-            const rect =
-                button.getBoundingClientRect();
-
-            ripple.style.left =
-                `${event.clientX - rect.left}px`;
-
-            ripple.style.top =
-                `${event.clientY - rect.top}px`;
-
-            button.appendChild(ripple);
-
-            setTimeout(() => {
-                ripple.remove();
-            }, 600);
-
-        });
-
-    });
-
-
-    /* =========================================
-       PARALLAX HERO EFFECT
-    ========================================= */
-
-    const hero =
-        document.querySelector(".hero");
-
-    if (hero) {
-
-        window.addEventListener(
-            "scroll",
-            () => {
-
-                const scrollY =
-                    window.scrollY;
-
-                if (scrollY < window.innerHeight) {
-
-                    hero.style.backgroundPosition =
-                        `center ${scrollY * 0.15}px`;
-                }
-
-            }
-        );
-
-    }
-
-
-    /* =========================================
-       MOUSE FOLLOW GLOW
-    ========================================= */
-
-    document.addEventListener(
-        "mousemove",
-        (event) => {
-
-            document.documentElement.style.setProperty(
-                "--mouse-x",
-                `${event.clientX}px`
-            );
-
-            document.documentElement.style.setProperty(
-                "--mouse-y",
-                `${event.clientY}px`
-            );
-
+        if (link.getAttribute("href") === "#" + currentSection) {
+            link.classList.add("active");
         }
-    );
+
+    });
+
+});
+
+
+// ================================
+// PROJECT CARD HOVER
+// ================================
+
+const projectCards = document.querySelectorAll(".project-card");
+
+projectCards.forEach((card) => {
+
+    card.addEventListener("mouseenter", () => {
+        card.style.transform = "translateY(-10px)";
+    });
+
+    card.addEventListener("mouseleave", () => {
+        card.style.transform = "translateY(0)";
+    });
+
+});
+
+
+// ================================
+// BUTTON CLICK EFFECT
+// ================================
+
+const buttons = document.querySelectorAll(".primary-button, .secondary-button");
+
+buttons.forEach((button) => {
+
+    button.addEventListener("click", () => {
+
+        button.style.transform = "scale(0.96)";
+
+        setTimeout(() => {
+            button.style.transform = "";
+        }, 150);
+
+    });
 
 });
