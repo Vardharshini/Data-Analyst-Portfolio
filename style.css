@@ -1260,3 +1260,62 @@ footer {
         width: fit-content;
     }
 }
+/* =========================================
+   JAVASCRIPT ANIMATION SUPPORT
+========================================= */
+
+.reveal {
+    opacity: 0;
+    transform: translateY(45px);
+    transition:
+        opacity 0.8s ease,
+        transform 0.8s ease;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.active-nav {
+    color: #b95f7f !important;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(253, 225, 235, 0.9),
+            rgba(238, 229, 244, 0.9)
+        );
+}
+
+.ripple {
+    position: absolute;
+
+    width: 10px;
+    height: 10px;
+
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, 0.65);
+
+    transform: translate(-50%, -50%);
+
+    animation: rippleEffect 0.6s ease-out;
+
+    pointer-events: none;
+}
+
+@keyframes rippleEffect {
+
+    from {
+        width: 10px;
+        height: 10px;
+        opacity: 0.8;
+    }
+
+    to {
+        width: 350px;
+        height: 350px;
+        opacity: 0;
+    }
+}
