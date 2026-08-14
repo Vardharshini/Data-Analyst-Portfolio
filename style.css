@@ -770,3 +770,347 @@ footer p {
         text-align: center;
     }
 }
+
+/* ========================================
+   INTERACTIVE HOVER ANIMATIONS
+======================================== */
+
+
+/* Smooth transition for everything */
+
+a,
+button,
+.about-card,
+.skill-pill,
+.project-card,
+.experience-item,
+.profile-box,
+.hero-button,
+.social-links a,
+.hero-socials a,
+.project-button,
+.footer-socials a {
+    transition:
+        transform 0.35s ease,
+        box-shadow 0.35s ease,
+        background 0.35s ease,
+        color 0.35s ease,
+        border-color 0.35s ease;
+}
+
+
+/* ========================================
+   ABOUT CARDS
+======================================== */
+
+.about-card {
+    cursor: pointer;
+}
+
+.about-card:hover {
+    transform: translateY(-12px) scale(1.02);
+    box-shadow: 0 20px 40px rgba(180, 100, 130, 0.18);
+}
+
+.about-card:hover .about-icon {
+    transform: rotate(8deg) scale(1.15);
+}
+
+.about-icon {
+    transition: transform 0.35s ease;
+}
+
+
+/* ========================================
+   SKILL PILLS
+======================================== */
+
+.skill-pill {
+    cursor: pointer;
+}
+
+.skill-pill:hover {
+    transform: translateY(-7px) scale(1.06);
+    box-shadow: 0 12px 25px rgba(180, 100, 130, 0.18);
+    background: #ffd9e2;
+}
+
+.skill-pill:hover i {
+    transform: rotate(-10deg) scale(1.15);
+}
+
+.skill-pill i {
+    transition: transform 0.3s ease;
+}
+
+
+/* ========================================
+   PROJECT CARDS
+======================================== */
+
+.project-card {
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+.project-card::before {
+    content: "";
+    position: absolute;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.25);
+    top: -70px;
+    right: -70px;
+    transition: 0.5s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-14px) scale(1.025);
+    box-shadow: 0 25px 50px rgba(120, 80, 130, 0.2);
+}
+
+.project-card:hover::before {
+    width: 250px;
+    height: 250px;
+}
+
+.project-icon {
+    transition: transform 0.4s ease;
+}
+
+.project-card:hover .project-icon {
+    transform: scale(1.2) rotate(8deg);
+}
+
+.project-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.project-button:hover {
+    transform: translateX(7px);
+}
+
+
+/* ========================================
+   HERO BUTTON
+======================================== */
+
+.hero-button:hover {
+    transform: translateY(-6px) scale(1.04);
+    box-shadow: 0 15px 30px rgba(200, 120, 150, 0.25);
+}
+
+.hero-button:hover i {
+    transform: translateX(7px);
+}
+
+.hero-button i {
+    transition: transform 0.3s ease;
+}
+
+
+/* ========================================
+   SOCIAL ICONS
+======================================== */
+
+.hero-socials a,
+.footer-socials a {
+    transition: all 0.3s ease;
+}
+
+.hero-socials a:hover,
+.footer-socials a:hover {
+    transform: translateY(-7px) rotate(8deg) scale(1.12);
+    background: #ffd3df;
+    box-shadow: 0 10px 20px rgba(180, 100, 130, 0.18);
+}
+
+
+/* ========================================
+   PROFILE IMAGE
+======================================== */
+
+.profile-box {
+    animation: floating 4s ease-in-out infinite;
+}
+
+.profile-box:hover {
+    animation-play-state: paused;
+    transform: translateY(-10px) scale(1.03) rotate(1deg);
+    box-shadow: 0 30px 60px rgba(150, 100, 150, 0.22);
+}
+
+@keyframes floating {
+
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-12px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+
+}
+
+
+/* ========================================
+   EXPERIENCE
+======================================== */
+
+.experience-item {
+    cursor: pointer;
+}
+
+.experience-item:hover {
+    transform: translateX(12px);
+}
+
+.experience-item:hover .experience-icon {
+    transform: rotate(12deg) scale(1.15);
+}
+
+.experience-icon {
+    transition: transform 0.35s ease;
+}
+
+
+/* ========================================
+   NAVIGATION
+======================================== */
+
+.navbar a {
+    position: relative;
+}
+
+.navbar nav a::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: -7px;
+    width: 0;
+    height: 2px;
+    background: #e99bad;
+    transform: translateX(-50%);
+    transition: width 0.3s ease;
+}
+
+.navbar nav a:hover::after {
+    width: 100%;
+}
+
+
+/* ========================================
+   THEME BUTTON
+======================================== */
+
+.theme-button {
+    cursor: pointer;
+    transition: transform 0.4s ease;
+}
+
+.theme-button:hover {
+    transform: rotate(25deg) scale(1.12);
+}
+
+
+/* ========================================
+   CONTACT INPUTS
+======================================== */
+
+.contact-form input,
+.contact-form textarea {
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        border-color 0.3s ease;
+}
+
+.contact-form input:hover,
+.contact-form textarea:hover {
+    transform: translateY(-3px);
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    transform: translateY(-3px) scale(1.01);
+    box-shadow: 0 10px 25px rgba(200, 120, 150, 0.12);
+    border-color: #e99bad;
+    outline: none;
+}
+
+
+/* ========================================
+   CONTACT BUTTON
+======================================== */
+
+.contact-form button {
+    cursor: pointer;
+    transition: all 0.35s ease;
+}
+
+.contact-form button:hover {
+    transform: translateY(-6px) scale(1.02);
+    box-shadow: 0 15px 30px rgba(200, 120, 150, 0.2);
+}
+
+.contact-form button:hover i {
+    transform: translateX(7px) rotate(-10deg);
+}
+
+.contact-form button i {
+    transition: transform 0.3s ease;
+}
+
+
+/* ========================================
+   FOOTER LOGO
+======================================== */
+
+.footer-logo {
+    transition: transform 0.4s ease;
+    cursor: pointer;
+}
+
+.footer-logo:hover {
+    transform: rotate(12deg) scale(1.12);
+}
+
+
+/* ========================================
+   IMAGE / VISUAL HOVER
+======================================== */
+
+.profile-inner {
+    transition: transform 0.5s ease;
+}
+
+.profile-box:hover .profile-inner {
+    transform: scale(1.04);
+}
+
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 600px) {
+
+    .about-card:hover,
+    .project-card:hover,
+    .skill-pill:hover {
+        transform: translateY(-7px) scale(1.01);
+    }
+
+    .experience-item:hover {
+        transform: translateX(5px);
+    }
+
+}
