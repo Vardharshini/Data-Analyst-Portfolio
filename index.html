@@ -1,94 +1,175 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
 
     <title>Vardharshini | Data Analyst Portfolio</title>
 
+    <!-- CSS -->
     <link rel="stylesheet" href="style.css">
 
+    <!-- Font Awesome Icons -->
     <link rel="stylesheet"
-          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
 </head>
+
 
 <body>
 
-    <!-- ================= NAVBAR ================= -->
+    <!-- =====================================
+         BACKGROUND EFFECT
+    ====================================== -->
 
-    <nav class="navbar">
-
-        <a href="#home" class="logo">
-            Vardharshini
-        </a>
-
-        <div class="nav-links">
-            <a href="#home">Home</a>
-            <a href="#about">About</a>
-            <a href="#projects">Projects</a>
-            <a href="#experience">Experience</a>
-            <a href="#contact">Contact</a>
-        </div>
-
-    </nav>
+    <div class="cursor-glow"></div>
 
 
-    <!-- ================= THEME BUTTON ================= -->
+    <!-- =====================================
+         NAVIGATION BAR
+    ====================================== -->
 
-    <button id="themeToggle" class="theme-toggle" aria-label="Toggle theme">
-        <i class="fa-solid fa-sun"></i>
-    </button>
+    <header class="navbar">
 
+        <div class="nav-container">
 
-    <!-- ================= HERO ================= -->
-
-    <section class="hero" id="home">
-
-        <div class="hero-content">
-
-            <p class="intro-text">
-                Hello, I'm
-            </p>
-
-            <h1>
+            <a href="#home" class="logo">
                 Vardharshini
-            </h1>
-
-            <p class="hero-role">
-                Data Analyst | Business Intelligence Enthusiast
-            </p>
-
-            <p class="hero-description">
-                Turning data into meaningful insights and supporting
-                better business decisions through analysis and visualization.
-            </p>
-
-            <a href="#projects" class="primary-btn">
-                View My Work
             </a>
 
+
+            <nav class="nav-links">
+
+                <a href="#home">Home</a>
+
+                <a href="#about">About</a>
+
+                <a href="#skills">Skills</a>
+
+                <a href="#experience">Experience</a>
+
+                <a href="#projects">Projects</a>
+
+                <a href="#contact">Contact</a>
+
+            </nav>
+
+
+            <button class="theme-toggle"
+                id="themeToggle"
+                aria-label="Toggle Dark Mode">
+
+                <i class="fa-solid fa-sun"></i>
+
+            </button>
+
         </div>
 
+    </header>
 
-        <div class="profile-box">
 
-            <div class="profile-image">
-                <i class="fa-solid fa-chart-column"></i>
+    <!-- =====================================
+         HERO SECTION
+    ====================================== -->
+
+    <section class="hero-section" id="home">
+
+        <div class="hero-container">
+
+
+            <!-- LEFT SIDE -->
+
+            <div class="hero-content">
+
+                <p class="hero-label">
+                    DATA ANALYST PORTFOLIO
+                </p>
+
+
+                <h1>
+                    Hi, I'm
+                    <span>Vardharshini</span>
+                </h1>
+
+
+                <h2>
+                    Aspiring Data Analyst
+                </h2>
+
+
+                <p class="hero-description">
+
+                    Passionate about transforming raw data into meaningful
+                    insights through data analysis, visualization, and
+                    business intelligence.
+
+                </p>
+
+
+                <div class="hero-buttons">
+
+                    <a href="#projects"
+                        class="primary-button">
+
+                        View My Projects
+
+                        <i class="fa-solid fa-arrow-right"></i>
+
+                    </a>
+
+
+                    <a href="#contact"
+                        class="secondary-button">
+
+                        Contact Me
+
+                    </a>
+
+                </div>
+
             </div>
+
+
+            <!-- RIGHT SIDE PROFILE IMAGE -->
+
+            <div class="hero-image-wrapper">
+
+                <div class="image-decoration"></div>
+
+                <div class="profile-image-container">
+
+                    <!--
+                        Replace profile.jpg with your actual
+                        image file name later
+                    -->
+
+                    <img src="profile.jpg"
+                        alt="Vardharshini"
+                        class="profile-image">
+
+                </div>
+
+            </div>
+
 
         </div>
 
     </section>
 
 
-    <!-- ================= ABOUT ================= -->
+    <!-- =====================================
+         ABOUT SECTION
+    ====================================== -->
 
     <section class="about-section" id="about">
 
         <div class="section-heading">
 
             <p class="section-label">
-                ABOUT ME
+                GET TO KNOW ME
             </p>
 
             <h2>
@@ -100,72 +181,109 @@
         </div>
 
 
-        <div class="about-cards">
+        <div class="about-container">
+
+
+            <!-- CARD 1 -->
 
             <div class="about-card">
 
-                <i class="fa-solid fa-chart-line"></i>
+                <div class="about-icon">
+
+                    <i class="fa-solid fa-user"></i>
+
+                </div>
+
 
                 <h3>
-                    Data Analysis
+                    Who I Am
                 </h3>
 
+
                 <p>
-                    Analyze data to identify trends, patterns,
-                    and meaningful business insights.
+
+                    Aspiring Data Analyst with hands-on experience
+                    in data analysis, data visualization, dashboard
+                    development, and business intelligence.
+
                 </p>
 
             </div>
 
 
+            <!-- CARD 2 -->
+
             <div class="about-card">
 
-                <i class="fa-solid fa-chart-pie"></i>
+                <div class="about-icon">
+
+                    <i class="fa-solid fa-chart-line"></i>
+
+                </div>
+
 
                 <h3>
-                    Data Visualization
+                    What I Do
                 </h3>
 
+
                 <p>
-                    Create dashboards and reports that present
-                    data clearly and effectively.
+
+                    I work with data to identify meaningful insights,
+                    create reports and dashboards, and support
+                    data-driven decision-making.
+
                 </p>
 
             </div>
 
 
+            <!-- CARD 3 -->
+
             <div class="about-card">
 
-                <i class="fa-solid fa-lightbulb"></i>
+                <div class="about-icon">
+
+                    <i class="fa-solid fa-lightbulb"></i>
+
+                </div>
+
 
                 <h3>
-                    Problem Solving
+                    My Goal
                 </h3>
 
+
                 <p>
-                    Apply analytical thinking to solve problems
-                    and support data-driven decisions.
+
+                    To begin my career as a Data Analyst and
+                    continuously develop my analytical and
+                    problem-solving skills through real-world data.
+
                 </p>
 
             </div>
+
 
         </div>
 
     </section>
 
 
-    <!-- ================= SKILLS ================= -->
+    <!-- =====================================
+         SKILLS SECTION
+    ====================================== -->
 
     <section class="skills-section" id="skills">
 
         <div class="section-heading">
 
             <p class="section-label">
-                MY SKILLS
+                MY TOOLKIT
             </p>
 
             <h2>
-                Tools & Technologies
+                Skills
             </h2>
 
             <div class="heading-line"></div>
@@ -173,25 +291,167 @@
         </div>
 
 
+        <p class="skills-description">
+
+            Tools and technologies I use for data analysis,
+            visualization, reporting, and business intelligence.
+
+        </p>
+
+
         <div class="skills-container">
 
-            <span>SQL</span>
-            <span>MySQL</span>
-            <span>Power BI</span>
-            <span>Domo</span>
-            <span>Domo Workflows</span>
-            <span>Power Apps</span>
-            <span>Agentic AI Workflows</span>
-            <span>Power Query</span>
-            <span>DAX</span>
-            <span>Microsoft Excel</span>
+            <div class="skill-item">
+
+                <i class="fa-solid fa-database"></i>
+
+                <span>SQL</span>
+
+            </div>
+
+
+            <div class="skill-item">
+
+                <i class="fa-solid fa-chart-column"></i>
+
+                <span>Power BI</span>
+
+            </div>
+
+
+            <div class="skill-item">
+
+                <i class="fa-solid fa-file-excel"></i>
+
+                <span>Microsoft Excel</span>
+
+            </div>
+
+
+            <div class="skill-item">
+
+                <i class="fa-solid fa-bolt"></i>
+
+                <span>Power Query</span>
+
+            </div>
+
+
+            <div class="skill-item">
+
+                <i class="fa-solid fa-chart-pie"></i>
+
+                <span>Domo</span>
+
+            </div>
 
         </div>
 
     </section>
 
 
-    <!-- ================= PROJECTS ================= -->
+    <!-- =====================================
+         EXPERIENCE SECTION
+    ====================================== -->
+
+    <section class="experience-section" id="experience">
+
+        <div class="section-heading">
+
+            <p class="section-label">
+                MY EXPERIENCE
+            </p>
+
+            <h2>
+                Experience
+            </h2>
+
+            <div class="heading-line"></div>
+
+        </div>
+
+
+        <div class="experience-container">
+
+            <div class="experience-card">
+
+
+                <div class="experience-header">
+
+                    <div class="experience-icon">
+
+                        <i class="fa-solid fa-briefcase"></i>
+
+                    </div>
+
+
+                    <div>
+
+                        <h3>
+                            GWC Data AI
+                        </h3>
+
+                        <p class="experience-role">
+                            Data Analyst Intern
+                        </p>
+
+                    </div>
+
+
+                    <span class="experience-duration">
+                        4 Months
+                    </span>
+
+                </div>
+
+
+                <ul class="experience-list">
+
+                    <li>
+
+                        Worked on <strong>Tableau to Power BI migration</strong>,
+                        supporting the process of recreating and validating
+                        reports in Power BI.
+
+                    </li>
+
+
+                    <li>
+
+                        Assisted with <strong>small data-related tasks</strong>
+                        assigned during the internship.
+
+                    </li>
+
+
+                    <li>
+
+                        Created a <strong>dashboard in Domo</strong> as part
+                        of hands-on learning and practical experience.
+
+                    </li>
+
+
+                    <li>
+
+                        Gained hands-on exposure to <strong>Power BI, Domo,
+                        data visualization, and BI reporting workflows</strong>.
+
+                    </li>
+
+                </ul>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================
+         PROJECTS SECTION
+    ====================================== -->
 
     <section class="projects-section" id="projects">
 
@@ -213,174 +473,116 @@
         <div class="projects-container">
 
 
-            <!-- ZUDIO -->
+            <!-- PROJECT 1 -->
 
             <div class="project-card">
 
-                <div class="project-card-top">
-
-                    <span class="project-icon">
-                        <i class="fa-solid fa-chart-line"></i>
-                    </span>
-
-                    <span class="project-number">
-                        01
-                    </span>
-
+                <div class="project-number">
+                    01
                 </div>
 
 
-                <h3>
-                    Zudio Sales Analysis
-                </h3>
-
-
-                <p>
-                    Analyzed sales data to identify key trends,
-                    customer patterns, and business insights.
-                </p>
-
-
-                <p class="tools-text">
-                    <strong>Tools:</strong>
-                    SQL, MySQL, Microsoft Excel, Power BI
-                </p>
-
-
-                <a href="https://github.com/Vardharshini/Data-Analyst-Portfolio/tree/main/projects/zudio"
-                   target="_blank"
-                   class="project-button">
-
-                    View Project
-                    <i class="fa-solid fa-arrow-right"></i>
-
-                </a>
-
-            </div>
-
-
-            <!-- ZOMATO -->
-
-            <div class="project-card">
-
-                <div class="project-card-top">
-
-                    <span class="project-icon">
-                        <i class="fa-solid fa-chart-column"></i>
-                    </span>
-
-                    <span class="project-number">
-                        02
-                    </span>
-
-                </div>
-
-
-                <h3>
-                    Zomato Sales Analysis
-                </h3>
-
-
-                <p>
-                    SQL-based analysis focused on sales trends,
-                    customer behavior, and business performance.
-                </p>
-
-
-                <p class="tools-text">
-                    <strong>Tools:</strong>
-                    SQL, MySQL, Microsoft Excel, Power BI
-                </p>
-
-
-                <a href="https://github.com/Vardharshini/Data-Analyst-Portfolio/tree/main/projects/zomato"
-                   target="_blank"
-                   class="project-button">
-
-                    View Project
-                    <i class="fa-solid fa-arrow-right"></i>
-
-                </a>
-
-            </div>
-
-
-        </div>
-
-    </section>
-
-
-    <!-- ================= EXPERIENCE ================= -->
-
-    <section class="experience-section" id="experience">
-
-        <div class="section-heading">
-
-            <p class="section-label">
-                EXPERIENCE
-            </p>
-
-            <h2>
-                Experience
-            </h2>
-
-            <div class="heading-line"></div>
-
-        </div>
-
-
-        <div class="experience-card">
-
-            <div class="experience-top">
-
-                <div>
-
-                    <p class="experience-date">
-                        4-Month Internship
-                    </p>
+                <div class="project-content">
 
                     <h3>
-                        Data Analyst Intern
+                        Zudio Sales Analysis
                     </h3>
 
-                    <h4>
-                        GWC Data AI
-                    </h4>
 
-                </div>
+                    <p>
 
-                <div class="experience-icon">
-                    <i class="fa-solid fa-briefcase"></i>
+                        Analyzed sales data to identify key trends,
+                        customer patterns, and business insights.
+
+                    </p>
+
+
+                    <div class="project-tools">
+
+                        <span>Microsoft Excel</span>
+
+                        <span>Power BI</span>
+
+                    </div>
+
+
+                    <!-- Replace # with your actual project link -->
+
+                    <a href="#"
+                        class="project-button"
+                        target="_blank">
+
+                        View Project
+
+                        <i class="fa-solid fa-arrow-up-right-from-square"></i>
+
+                    </a>
+
                 </div>
 
             </div>
 
 
-            <ul>
+            <!-- PROJECT 2 -->
 
-                <li>
-                    Gained hands-on experience in data analysis
-                    and business intelligence.
-                </li>
+            <div class="project-card">
 
-                <li>
-                    Worked with data, dashboards, reporting,
-                    and analytical tools.
-                </li>
+                <div class="project-number">
+                    02
+                </div>
 
-                <li>
-                    Developed practical problem-solving and
-                    data-driven decision-making skills.
-                </li>
 
-            </ul>
+                <div class="project-content">
+
+                    <h3>
+                        Zomato Sales Analysis
+                    </h3>
+
+
+                    <p>
+
+                        Analyzed sales data to understand sales trends,
+                        customer behavior, and business performance.
+
+                    </p>
+
+
+                    <div class="project-tools">
+
+                        <span>SQL</span>
+
+                        <span>Microsoft Excel</span>
+
+                        <span>Power BI</span>
+
+                    </div>
+
+
+                    <!-- Replace # with your actual project link -->
+
+                    <a href="#"
+                        class="project-button"
+                        target="_blank">
+
+                        View Project
+
+                        <i class="fa-solid fa-arrow-up-right-from-square"></i>
+
+                    </a>
+
+                </div>
+
+            </div>
+
 
         </div>
 
     </section>
 
 
-    <!-- ================= CONTACT ================= -->
+    <!-- =====================================
+         CONTACT SECTION
+    ====================================== -->
 
     <section class="contact-section" id="contact">
 
@@ -402,7 +604,7 @@
         <div class="contact-container">
 
 
-            <!-- LEFT -->
+            <!-- LEFT SIDE -->
 
             <div class="contact-info">
 
@@ -410,65 +612,97 @@
                     Let's Work With Data
                 </h3>
 
+
                 <p>
+
                     I'm open to Data Analyst, Junior Data Analyst,
                     Business Analyst, and Business Intelligence
                     opportunities.
+
                 </p>
 
+
+                <!-- EMAIL -->
 
                 <div class="contact-detail">
 
                     <div class="contact-icon">
+
                         <i class="fa-solid fa-envelope"></i>
+
                     </div>
 
+
                     <div>
-                        <strong>Email</strong>
+
+                        <strong>
+                            Email
+                        </strong>
 
                         <a href="mailto:dharshur165@gmail.com">
                             dharshur165@gmail.com
                         </a>
+
                     </div>
 
                 </div>
 
 
+                <!-- LINKEDIN -->
+
                 <div class="contact-detail">
 
                     <div class="contact-icon">
+
                         <i class="fa-brands fa-linkedin-in"></i>
+
                     </div>
 
+
                     <div>
-                        <strong>LinkedIn</strong>
+
+                        <strong>
+                            LinkedIn
+                        </strong>
 
                         <a href="https://www.linkedin.com/in/vardharshini-dataanalyst/"
-                           target="_blank">
+                            target="_blank"
+                            rel="noopener noreferrer">
 
                             LinkedIn Profile
 
                         </a>
+
                     </div>
 
                 </div>
 
 
+                <!-- GITHUB -->
+
                 <div class="contact-detail">
 
                     <div class="contact-icon">
+
                         <i class="fa-brands fa-github"></i>
+
                     </div>
 
+
                     <div>
-                        <strong>GitHub</strong>
+
+                        <strong>
+                            GitHub
+                        </strong>
 
                         <a href="https://github.com/Vardharshini"
-                           target="_blank">
+                            target="_blank"
+                            rel="noopener noreferrer">
 
                             GitHub Profile
 
                         </a>
+
                     </div>
 
                 </div>
@@ -476,46 +710,54 @@
             </div>
 
 
-            <!-- RIGHT -->
+            <!-- RIGHT SIDE -->
 
-            <form class="contact-form" id="contactForm">
+            <form class="contact-form"
+                id="contactForm">
 
-                <div class="form-row">
+                <div class="contact-row">
 
-                    <input
-                        type="text"
+                    <input type="text"
+                        name="name"
                         placeholder="Your Name"
-                        required
-                    >
+                        required>
 
-                    <input
-                        type="email"
+
+                    <input type="email"
+                        name="email"
                         placeholder="Your Email"
-                        required
-                    >
+                        required>
 
                 </div>
 
 
-                <textarea
+                <textarea name="message"
                     placeholder="Your Message"
                     required></textarea>
 
 
-                <button type="submit">
+                <button type="submit"
+                    class="send-button">
+
                     Send Message
+
+                    <i class="fa-solid fa-paper-plane"></i>
+
                 </button>
 
             </form>
+
 
         </div>
 
     </section>
 
 
-    <!-- ================= FOOTER ================= -->
+    <!-- =====================================
+         FOOTER
+    ====================================== -->
 
-    <footer>
+    <footer class="footer">
 
         <p>
             © 2026 Vardharshini. All Rights Reserved.
@@ -524,7 +766,10 @@
     </footer>
 
 
+    <!-- JAVASCRIPT -->
+
     <script src="script.js"></script>
 
 </body>
+
 </html>
