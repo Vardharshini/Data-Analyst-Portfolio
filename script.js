@@ -1,33 +1,70 @@
-const themeToggle = document.getElementById("themeToggle");
+// =====================================
+// DARK / LIGHT THEME
+// =====================================
 
-themeToggle.addEventListener("click", function () {
+const themeToggle = document.getElementById("themeToggle");
+const themeIcon = themeToggle.querySelector("i");
+
+// Check saved theme
+const savedTheme = localStorage.getItem("theme");
+
+if (savedTheme === "dark") {
+    document.body.classList.add("dark-mode");
+
+    themeIcon.classList.remove("fa-sun");
+    themeIcon.classList.add("fa-moon");
+}
+
+
+// Theme toggle
+themeToggle.addEventListener("click", () => {
 
     document.body.classList.toggle("dark-mode");
 
-    const icon = themeToggle.querySelector("i");
 
     if (document.body.classList.contains("dark-mode")) {
 
-        icon.classList.remove("fa-sun");
-        icon.classList.add("fa-moon");
+        themeIcon.classList.remove("fa-sun");
+        themeIcon.classList.add("fa-moon");
+
+        localStorage.setItem("theme", "dark");
 
     } else {
 
-        icon.classList.remove("fa-moon");
-        icon.classList.add("fa-sun");
+        themeIcon.classList.remove("fa-moon");
+        themeIcon.classList.add("fa-sun");
 
+        localStorage.setItem("theme", "light");
     }
 
 });
 
 
+// =====================================
+// MOUSE GLOW MOVEMENT
+// =====================================
+
+const cursorGlow = document.querySelector(".cursor-glow");
+
+document.addEventListener("mousemove", (event) => {
+
+    cursorGlow.style.left = event.clientX + "px";
+    cursorGlow.style.top = event.clientY + "px";
+
+});
+
+
+// =====================================
+// CONTACT FORM
+// =====================================
+
 const contactForm = document.getElementById("contactForm");
 
-contactForm.addEventListener("submit", function (event) {
+contactForm.addEventListener("submit", (event) => {
 
     event.preventDefault();
 
-    alert("Thank you! Your message has been received.");
+    alert("Thank you for your message! I will get back to you soon.");
 
     contactForm.reset();
 
