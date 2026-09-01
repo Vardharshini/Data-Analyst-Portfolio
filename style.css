@@ -1195,6 +1195,99 @@ body.dark-mode .footer {
 
 
 
+/* =====================================
+   FINAL PROFILE IMAGE FIX
+===================================== */
+
+/* Main image section */
+.hero-image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* Outer pastel box */
+.profile-image-wrapper {
+    width: 465px !important;
+    height: 465px !important;
+
+    padding: 18px !important;
+    box-sizing: border-box !important;
+
+    background: linear-gradient(
+        135deg,
+        #c9bfd8 0%,
+        #d8c7d7 50%,
+        #f0c7cf 100%
+    ) !important;
+
+    border-radius: 42px !important;
+
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+    position: relative !important;
+    overflow: hidden !important;
+}
+
+
+/* Actual photo */
+.profile-image-wrapper img {
+    width: 100% !important;
+    height: 100% !important;
+
+    object-fit: cover !important;
+    object-position: center top !important;
+
+    border-radius: 28px !important;
+
+    display: block !important;
+}
+
+
+/* Inner pink frame */
+.profile-image-wrapper::after {
+    content: "" !important;
+
+    position: absolute !important;
+
+    top: 42px !important;
+    left: 42px !important;
+    right: 42px !important;
+    bottom: 42px !important;
+
+    border: 2px solid rgba(255, 205, 215, 0.75) !important;
+
+    border-radius: 24px !important;
+
+    pointer-events: none !important;
+    z-index: 2 !important;
+}
+
+
+/* Responsive */
+@media (max-width: 768px) {
+
+    .profile-image-wrapper {
+        width: 350px !important;
+        height: 350px !important;
+    }
+
+}
+
+@media (max-width: 480px) {
+
+    .profile-image-wrapper {
+        width: 280px !important;
+        height: 280px !important;
+    }
+
+}
+
+
+
 
 
 
