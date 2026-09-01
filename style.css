@@ -53,7 +53,7 @@ a {
 }
 
 /* =====================================
-   CURSOR GLOW / MOUSE MOVEMENT
+   CURSOR GLOW
 ===================================== */
 
 .cursor-glow {
@@ -73,7 +73,6 @@ a {
         transparent 70%
     );
     filter: blur(8px);
-    transition: opacity 0.3s ease;
 }
 
 /* =====================================
@@ -124,12 +123,10 @@ body.dark-mode .navbar {
     font-size: 14px;
     font-weight: 500;
     color: var(--text-soft);
-    transition: color 0.3s ease, transform 0.3s ease;
 }
 
 .nav-links a:hover {
     color: var(--pink-dark);
-    transform: translateY(-2px);
 }
 
 .theme-toggle {
@@ -142,12 +139,6 @@ body.dark-mode .navbar {
     color: var(--pink-dark);
     cursor: pointer;
     font-size: 17px;
-    box-shadow: 0 5px 18px rgba(100, 70, 85, 0.08);
-    transition: transform 0.3s ease;
-}
-
-.theme-toggle:hover {
-    transform: rotate(20deg) scale(1.05);
 }
 
 /* =====================================
@@ -283,7 +274,6 @@ body.dark-mode .hero-section {
     text-decoration: none;
     font-size: 14px;
     font-weight: 600;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .primary-button {
@@ -302,48 +292,89 @@ body.dark-mode .hero-section {
     background: var(--card);
 }
 
-.primary-button:hover,
-.secondary-button:hover {
-    transform: translateY(-4px);
+/* =====================================
+   PROFILE IMAGE - FINAL
+   Reference style: square pastel box
+===================================== */
+
+/* Old oval/blob background remove */
+.image-decoration {
+    display: none;
 }
 
+/* Outer pastel box */
 .hero-image-wrapper {
     position: relative;
-    width: 340px;
-    height: 410px;
+    width: 465px;
+    height: 465px;
     margin: auto;
-}
+    padding: 18px;
+    box-sizing: border-box;
 
-.image-decoration {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    border-radius: 45% 55% 50% 50%;
-    transform: rotate(8deg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+    border-radius: 42px;
+
     background: linear-gradient(
         135deg,
-        var(--pink),
-        var(--purple)
+        #c9bfd8 0%,
+        #d8c7d7 50%,
+        #f0c7cf 100%
     );
-    opacity: 0.55;
+
+    box-shadow: 0 20px 50px rgba(103, 73, 88, 0.18);
 }
 
+/* Actual image area */
 .profile-image-container {
     position: relative;
     width: 100%;
     height: 100%;
-    padding: 10px;
-    border-radius: 45% 55% 50% 50%;
+    padding: 0;
+
     overflow: hidden;
-    background: var(--card);
-    box-shadow: 0 20px 50px rgba(103, 73, 88, 0.18);
+    border-radius: 28px;
+
+    background: #f5edf2;
+    box-shadow: none;
 }
 
+/* Your actual photo */
 .profile-image {
     width: 100%;
     height: 100%;
+
+    display: block;
+
     object-fit: cover;
-    border-radius: 45% 55% 50% 50%;
+
+    /* Face properly visible */
+    object-position: center top;
+
+    border-radius: 28px;
+}
+
+/* Inner pink border */
+.hero-image-wrapper::after {
+    content: "";
+
+    position: absolute;
+
+    top: 42px;
+    right: 42px;
+    bottom: 42px;
+    left: 42px;
+
+    border: 2px solid rgba(255, 205, 215, 0.75);
+
+    border-radius: 24px;
+
+    pointer-events: none;
+
+    z-index: 2;
 }
 
 /* =====================================
@@ -370,12 +401,6 @@ body.dark-mode .hero-section {
     border: 1px solid var(--border);
     background: var(--card);
     box-shadow: var(--shadow);
-    transition: transform 0.35s ease, box-shadow 0.35s ease;
-}
-
-.about-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 20px 45px rgba(125, 88, 107, 0.16);
 }
 
 .about-icon {
@@ -420,14 +445,6 @@ body.dark-mode .hero-section {
     );
 }
 
-body.dark-mode .skills-section {
-    background: linear-gradient(
-        135deg,
-        #241d25,
-        #211e2b
-    );
-}
-
 .skills-description {
     max-width: 700px;
     margin: -20px auto 40px;
@@ -459,16 +476,10 @@ body.dark-mode .skills-section {
     box-shadow: 0 8px 22px rgba(115, 85, 100, 0.08);
     font-size: 14px;
     font-weight: 600;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .skill-item i {
     color: var(--pink-dark);
-}
-
-.skill-item:hover {
-    transform: translateY(-6px) scale(1.03);
-    box-shadow: 0 15px 30px rgba(155, 105, 128, 0.16);
 }
 
 /* =====================================
@@ -568,14 +579,6 @@ body.dark-mode .skills-section {
     );
 }
 
-body.dark-mode .projects-section {
-    background: linear-gradient(
-        135deg,
-        #2b2331,
-        #33232d
-    );
-}
-
 .projects-container {
     max-width: 1050px;
     margin: auto;
@@ -593,12 +596,6 @@ body.dark-mode .projects-section {
     border: 1px solid var(--border);
     background: var(--card);
     box-shadow: var(--shadow);
-    transition: transform 0.35s ease, box-shadow 0.35s ease;
-}
-
-.project-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 22px 45px rgba(101, 69, 92, 0.17);
 }
 
 .project-number {
@@ -665,12 +662,6 @@ body.dark-mode .projects-section {
         var(--pink-dark),
         #ad8bc6
     );
-    box-shadow: 0 8px 20px rgba(185, 112, 140, 0.22);
-    transition: transform 0.3s ease;
-}
-
-.project-button:hover {
-    transform: translateY(-3px);
 }
 
 /* =====================================
@@ -735,10 +726,6 @@ body.dark-mode .projects-section {
     font-size: 14px;
 }
 
-.contact-detail a:hover {
-    color: var(--pink-dark);
-}
-
 .contact-form {
     padding: 30px;
     border-radius: 24px;
@@ -765,18 +752,6 @@ body.dark-mode .projects-section {
     font-size: 14px;
     color: var(--text);
     background: rgba(255, 255, 255, 0.55);
-    transition: border 0.3s ease, box-shadow 0.3s ease;
-}
-
-body.dark-mode .contact-form input,
-body.dark-mode .contact-form textarea {
-    background: rgba(255, 255, 255, 0.06);
-}
-
-.contact-form input:focus,
-.contact-form textarea:focus {
-    border-color: var(--pink);
-    box-shadow: 0 0 0 4px rgba(224, 156, 173, 0.12);
 }
 
 .contact-form textarea {
@@ -799,11 +774,6 @@ body.dark-mode .contact-form textarea {
         var(--pink-dark),
         #a98bc5
     );
-    transition: transform 0.3s ease;
-}
-
-.send-button:hover {
-    transform: translateY(-3px);
 }
 
 /* =====================================
@@ -848,6 +818,8 @@ body.dark-mode .footer {
 
     .hero-image-wrapper {
         order: 1;
+        width: 380px;
+        height: 380px;
     }
 
     .hero-description {
@@ -908,8 +880,20 @@ body.dark-mode .footer {
     }
 
     .hero-image-wrapper {
-        width: 260px;
-        height: 320px;
+        width: 280px;
+        height: 280px;
+        padding: 12px;
+        border-radius: 32px;
+    }
+
+    .profile-image-container,
+    .profile-image {
+        border-radius: 22px;
+    }
+
+    .hero-image-wrapper::after {
+        inset: 28px;
+        border-radius: 18px;
     }
 
     .hero-content h1 {
@@ -948,358 +932,3 @@ body.dark-mode .footer {
         gap: 0;
     }
 }
-
-
-
-/* =====================================
-   UPDATED PROFILE IMAGE DESIGN
-===================================== */
-
-.hero-image-wrapper {
-    position: relative;
-    width: 420px;
-    height: 520px;
-    margin: auto;
-    padding: 14px;
-    border-radius: 55px;
-    background: linear-gradient(
-        135deg,
-        #d3c1e0,
-        #eec3cc
-    );
-    box-shadow: 0 20px 50px rgba(103, 73, 88, 0.18);
-    transition: transform 0.35s ease;
-}
-
-.hero-image-wrapper:hover {
-    transform: translateY(-8px);
-}
-
-.image-decoration {
-    position: absolute;
-    inset: 32px;
-    width: auto;
-    height: auto;
-    border: 2px solid rgba(238, 181, 194, 0.65);
-    border-radius: 32px;
-    transform: none;
-    background: transparent;
-    opacity: 1;
-    pointer-events: none;
-    z-index: 2;
-}
-
-.profile-image-container {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    padding: 0;
-    border-radius: 42px;
-    overflow: hidden;
-    background: #f5edf2;
-    box-shadow: none;
-}
-
-.profile-image {
-    width: 100%;
-    height: 100%;
-    display: block;
-    object-fit: cover;
-    object-position: center;
-    border-radius: 42px;
-}
-
-
-/* MOBILE PROFILE IMAGE */
-
-@media (max-width: 650px) {
-
-    .hero-image-wrapper {
-        width: 280px;
-        height: 350px;
-        padding: 10px;
-        border-radius: 40px;
-    }
-
-    .image-decoration {
-        inset: 22px;
-        border-radius: 25px;
-    }
-
-    .profile-image-container,
-    .profile-image {
-        border-radius: 30px;
-    }
-
-}
-
-
-
-
-
-/* =====================================
-   PROFILE IMAGE - FINAL DESIGN
-===================================== */
-
-.hero-image-wrapper {
-    position: relative;
-    width: 465px;
-    height: 465px;
-    margin: auto;
-    padding: 14px;
-    border-radius: 42px;
-    background: linear-gradient(
-        135deg,
-        #c9bfd8,
-        #f0c7cf
-    );
-    box-shadow: 0 20px 50px rgba(103, 73, 88, 0.18);
-    transition: transform 0.35s ease;
-}
-
-.hero-image-wrapper:hover {
-    transform: translateY(-8px);
-}
-
-.image-decoration {
-    position: absolute;
-    inset: 42px;
-    border: 2px solid rgba(238, 181, 194, 0.65);
-    border-radius: 24px;
-    pointer-events: none;
-    z-index: 2;
-}
-
-.profile-image-container {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-    border-radius: 30px;
-    background: #f5edf2;
-}
-
-.profile-image {
-    width: 100%;
-    height: 100%;
-    display: block;
-    object-fit: cover;
-    object-position: center;
-    border-radius: 30px;
-}
-
-
-/* =====================================
-   MOBILE PROFILE IMAGE
-===================================== */
-
-@media (max-width: 650px) {
-
-    .hero-image-wrapper {
-        width: 280px;
-        height: 280px;
-        padding: 10px;
-        border-radius: 30px;
-    }
-
-    .image-decoration {
-        inset: 25px;
-        border-radius: 18px;
-    }
-
-    .profile-image-container,
-    .profile-image {
-        border-radius: 20px;
-    }
-
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* =====================================
-   PROFILE IMAGE - FINAL STYLE
-===================================== */
-
-.profile-image-wrapper {
-    width: 465px;
-    height: 465px;
-    padding: 18px;
-    box-sizing: border-box;
-
-    background: linear-gradient(135deg, #c9bfd8, #f0c7cf);
-
-    border-radius: 42px;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    position: relative;
-    overflow: hidden;
-}
-
-
-/* Inner image area */
-
-.profile-image-wrapper img {
-    width: 100%;
-    height: 100%;
-
-    object-fit: cover;
-    object-position: center;
-
-    display: block;
-
-    border-radius: 28px;
-}
-
-
-/* Inner border like reference image */
-
-.profile-image-wrapper::after {
-    content: "";
-
-    position: absolute;
-
-    top: 42px;
-    right: 42px;
-    bottom: 42px;
-    left: 42px;
-
-    border: 2px solid rgba(255, 210, 220, 0.65);
-
-    border-radius: 24px;
-
-    pointer-events: none;
-}
-
-
-
-
-
-/* =====================================
-   FINAL PROFILE IMAGE FIX
-===================================== */
-
-/* Main image section */
-.hero-image {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-
-/* Outer pastel box */
-.profile-image-wrapper {
-    width: 465px !important;
-    height: 465px !important;
-
-    padding: 18px !important;
-    box-sizing: border-box !important;
-
-    background: linear-gradient(
-        135deg,
-        #c9bfd8 0%,
-        #d8c7d7 50%,
-        #f0c7cf 100%
-    ) !important;
-
-    border-radius: 42px !important;
-
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-
-    position: relative !important;
-    overflow: hidden !important;
-}
-
-
-/* Actual photo */
-.profile-image-wrapper img {
-    width: 100% !important;
-    height: 100% !important;
-
-    object-fit: cover !important;
-    object-position: center top !important;
-
-    border-radius: 28px !important;
-
-    display: block !important;
-}
-
-
-/* Inner pink frame */
-.profile-image-wrapper::after {
-    content: "" !important;
-
-    position: absolute !important;
-
-    top: 42px !important;
-    left: 42px !important;
-    right: 42px !important;
-    bottom: 42px !important;
-
-    border: 2px solid rgba(255, 205, 215, 0.75) !important;
-
-    border-radius: 24px !important;
-
-    pointer-events: none !important;
-    z-index: 2 !important;
-}
-
-
-/* Responsive */
-@media (max-width: 768px) {
-
-    .profile-image-wrapper {
-        width: 350px !important;
-        height: 350px !important;
-    }
-
-}
-
-@media (max-width: 480px) {
-
-    .profile-image-wrapper {
-        width: 280px !important;
-        height: 280px !important;
-    }
-
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
