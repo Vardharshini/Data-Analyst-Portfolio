@@ -932,3 +932,51 @@ body.dark-mode .footer {
         gap: 0;
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ===== PROFILE IMAGE FINAL FIX ===== */
+
+.profile-image-wrapper {
+    width: 465px !important;
+    height: 465px !important;
+    min-width: 465px !important;
+    min-height: 465px !important;
+
+    padding: 18px !important;
+    box-sizing: border-box !important;
+
+    border-radius: 42px !important;
+    overflow: hidden !important;
+
+    background: linear-gradient(135deg, #c9bfd8, #f0c7cf) !important;
+
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+
+.profile-image-wrapper img {
+    width: 100% !important;
+    height: 100% !important;
+
+    object-fit: contain !important;
+    object-position: center !important;
+
+    border-radius: 28px !important;
+    display: block !important;
+
+    transform: none !important;
+}
