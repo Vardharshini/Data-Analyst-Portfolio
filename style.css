@@ -934,32 +934,142 @@ body.dark-mode .footer {
 }
 
 
-/* Profile Image Frame */
-.profile-image-wrapper {
-    width: 350px;
-    height: 400px;
-    padding: 28px;
-    border-radius: 35px;
-    background: linear-gradient(135deg, #d8cbe8, #f3c8d2);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-sizing: border-box;
+/
+/* =====================================
+   PROFILE IMAGE - FINAL CLEAN VERSION
+===================================== */
+
+/* Hide old decoration */
+.image-decoration {
+    display: none !important;
 }
 
-/* Profile Image */
-.profile-image-wrapper img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    object-position: center;
-    border-radius: 25px;
-    display: block;
-    border: 2px solid rgba(255, 190, 205, 0.7);
+/* Main photo frame */
+.hero-image-wrapper {
+    position: relative !important;
+    width: 465px !important;
+    height: 465px !important;
+    min-width: 465px !important;
+    min-height: 465px !important;
+
+    margin: auto !important;
+    padding: 18px !important;
+    box-sizing: border-box !important;
+
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+    overflow: hidden !important;
+    border-radius: 42px !important;
+
+    background: linear-gradient(
+        135deg,
+        #c9bfd8 0%,
+        #d8c7d7 50%,
+        #f0c7cf 100%
+    ) !important;
+
+    box-shadow: 0 20px 50px rgba(103, 73, 88, 0.18) !important;
 }
 
+/* Remove unwanted hover movement */
+.hero-image-wrapper:hover {
+    transform: none !important;
+}
 
+/* Inner photo area */
+.profile-image-container {
+    position: relative !important;
+    width: 100% !important;
+    height: 100% !important;
 
+    padding: 0 !important;
+    margin: 0 !important;
+
+    overflow: hidden !important;
+    border-radius: 28px !important;
+
+    background: #f5edf2 !important;
+    box-shadow: none !important;
+}
+
+/* Actual profile photo - full photo visible */
+.profile-image {
+    width: 100% !important;
+    height: 100% !important;
+
+    display: block !important;
+
+    object-fit: contain !important;
+    object-position: center center !important;
+
+    transform: none !important;
+    scale: 1 !important;
+
+    border-radius: 28px !important;
+}
+
+/* Pink inner border */
+.hero-image-wrapper::after {
+    content: "" !important;
+
+    position: absolute !important;
+    top: 42px !important;
+    right: 42px !important;
+    bottom: 42px !important;
+    left: 42px !important;
+
+    border: 2px solid rgba(255, 205, 215, 0.75) !important;
+    border-radius: 24px !important;
+
+    pointer-events: none !important;
+    z-index: 10 !important;
+}
+
+/* =====================================
+   TABLET
+===================================== */
+
+@media (max-width: 900px) {
+    .hero-image-wrapper {
+        width: 380px !important;
+        height: 380px !important;
+        min-width: 380px !important;
+        min-height: 380px !important;
+    }
+}
+
+/* =====================================
+   MOBILE
+===================================== */
+
+@media (max-width: 650px) {
+    .hero-image-wrapper {
+        width: min(88vw, 320px) !important;
+        height: min(88vw, 320px) !important;
+
+        min-width: unset !important;
+        min-height: unset !important;
+
+        padding: 12px !important;
+        border-radius: 32px !important;
+    }
+
+    .profile-image-container,
+    .profile-image {
+        border-radius: 22px !important;
+    }
+
+    .hero-image-wrapper::after {
+        top: 30px !important;
+        right: 30px !important;
+        bottom: 30px !important;
+        left: 30px !important;
+
+        border-radius: 18px !important;
+    }
+}
 
 
 
