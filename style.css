@@ -1037,44 +1037,24 @@ body.dark-mode .footer {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /* =====================================
-   FINAL PROFILE IMAGE SHAPE OVERRIDE
+   PROFILE IMAGE - FINAL DESIGN
 ===================================== */
 
 .hero-image-wrapper {
-    position: relative !important;
-    width: 420px !important;
-    height: 520px !important;
-    margin: auto !important;
-    padding: 14px !important;
-    border-radius: 55px !important;
+    position: relative;
+    width: 465px;
+    height: 465px;
+    margin: auto;
+    padding: 14px;
+    border-radius: 42px;
     background: linear-gradient(
         135deg,
-        #d3c1e0,
-        #eec3cc
-    ) !important;
-    box-shadow: 0 20px 50px rgba(103, 73, 88, 0.18) !important;
-    overflow: visible !important;
+        #c9bfd8,
+        #f0c7cf
+    );
+    box-shadow: 0 20px 50px rgba(103, 73, 88, 0.18);
+    transition: transform 0.35s ease;
 }
 
 .hero-image-wrapper:hover {
@@ -1082,59 +1062,75 @@ body.dark-mode .footer {
 }
 
 .image-decoration {
-    position: absolute !important;
-    inset: 32px !important;
-    width: auto !important;
-    height: auto !important;
-    border: 2px solid rgba(238, 181, 194, 0.65) !important;
-    border-radius: 32px !important;
-    transform: none !important;
-    background: transparent !important;
-    opacity: 1 !important;
-    pointer-events: none !important;
-    z-index: 2 !important;
+    position: absolute;
+    inset: 42px;
+    border: 2px solid rgba(238, 181, 194, 0.65);
+    border-radius: 24px;
+    pointer-events: none;
+    z-index: 2;
 }
 
 .profile-image-container {
-    position: relative !important;
-    width: 100% !important;
-    height: 100% !important;
-    padding: 0 !important;
-    border-radius: 42px !important;
-    overflow: hidden !important;
-    background: #f5edf2 !important;
-    box-shadow: none !important;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    border-radius: 30px;
+    background: #f5edf2;
 }
 
 .profile-image {
-    width: 100% !important;
-    height: 100% !important;
-    display: block !important;
-    object-fit: cover !important;
-    object-position: center !important;
-    border-radius: 42px !important;
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 30px;
 }
 
 
-/* MOBILE */
+/* =====================================
+   MOBILE PROFILE IMAGE
+===================================== */
 
 @media (max-width: 650px) {
 
     .hero-image-wrapper {
-        width: 280px !important;
-        height: 350px !important;
-        padding: 10px !important;
-        border-radius: 40px !important;
+        width: 280px;
+        height: 280px;
+        padding: 10px;
+        border-radius: 30px;
     }
 
     .image-decoration {
-        inset: 22px !important;
-        border-radius: 25px !important;
+        inset: 25px;
+        border-radius: 18px;
     }
 
     .profile-image-container,
     .profile-image {
-        border-radius: 30px !important;
+        border-radius: 20px;
     }
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
